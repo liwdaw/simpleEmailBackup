@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<config>
+	<sender id="1">
+		<email>automatic.email.sender1@gmail.com</email>
+		<password>s8G5Rt53sE2Fx1Y</password>
+		<smtpHost>smtp.gmail.com</smtpHost>
+		<smtpPort>587</smtpPort>
+	</sender>
+	<receiver id="1">
+		<email>liwocha.dawid@gmail.com</email>
+	</receiver>
+	<source id="1">
+		<directoryAbsolutePath>C:\\Users\Dawid\Desktop\test\</directoryAbsolutePath>
+		<filesExtension>.docx</filesExtension>
+	</source>
+</config>
