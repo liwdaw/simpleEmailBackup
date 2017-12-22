@@ -20,7 +20,7 @@ public class Main {
 			);
 			Directory directory = new Directory(directoryPath);
 			String filesExtension = xmlFile.getElementByTagName("filesExtension");
-			List<String> filesNames = directory.getFilesNames(filesExtension);
+			List<String> filesNames = directory.getFilesNames(filesExtension);		
 			xmlFile.setNodeList("sender");
 			Email email = new Email();
 			email.setProperties(xmlFile.getElementByTagName("smtpHost"), xmlFile.getElementByTagName("smtpPort"));
@@ -29,9 +29,11 @@ public class Main {
 			email.setReceiver(xmlFile.getElementByTagName("email"));
 			email.setTitle("BACKUP");
 			email.addAtachments(directoryPath, filesNames, filesExtension);
+		    System.out.println("Sending...");
 			email.send();
+		    System.out.println("Done...");
 		} catch (Exception e) {
-			e.printStackTrace();
+			System.err.println("ERROR: "+e.getMessage());
 		}		
 	}
 

@@ -59,16 +59,13 @@ public class Email {
         multipart = new MimeMultipart();
 		for (int i=0; i<filesNames.size(); i++) {
 			MimeBodyPart mimeBodyPart = new MimeBodyPart();
-			mimeBodyPart.attachFile(directoryPath.toString()+filesNames.get(i));
+			mimeBodyPart.attachFile(directoryPath.toString()+"\\"+filesNames.get(i));
 			multipart.addBodyPart(mimeBodyPart);
-  			System.out.println(filesNames.get(i));
 		}	
 		message.setContent(multipart);
 	}
 	
 	public void send() throws Exception {		    	
-	    System.out.println("Sending...");
 	    Transport.send(message);
-	    System.out.println("Done!");
 	  }
 }
