@@ -55,7 +55,7 @@ public class Email {
 		message.setSubject(title);
 	}
 	
-	void addAtachments(Path directoryPath, List<String> filesNames, String filesExtension) throws Exception {
+	public void addAtachments(Path directoryPath, List<String> filesNames, String filesExtension) throws Exception {
         multipart = new MimeMultipart();
 		for (int i=0; i<filesNames.size(); i++) {
 			MimeBodyPart mimeBodyPart = new MimeBodyPart();
@@ -66,7 +66,7 @@ public class Email {
 		message.setContent(multipart);
 	}
 	
-	void send() throws Exception {		    	
+	public void send() throws Exception {		    	
 	    System.out.println("Sending...");
 	    Transport.send(message);
 	    System.out.println("Done!");
